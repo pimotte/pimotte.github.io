@@ -77,8 +77,7 @@ warning [foo.ico.noheader]:  743 extra bytes at beginning or within zipfile
   inflating: www.com
 ```
 
-The driver.txt file contains the flag! I did not end up figuring out what exactly is the deal with
-the `.ico` file. It turns out that unzipping the original `foo.ico` file also does the trick.
+The driver.txt file contains the flag! It turns out that unzipping the original `foo.ico` file also does the trick.
 The file is actually both a `.ico` and `.zip` file, taking advantage of the slack in both formats,
 as both have a header of sorts with offsets for the actual data, but in the case of `.ico` this
 header is at the front, whereas for `.zip` it is at the back. When I truncated the `.ico` header,
