@@ -8,8 +8,9 @@
  theme: minima
  gfm_quirks: paragraph_end
 
- title: otte.dev
+ title: Cellular Ottermata
  author: Pim Otte
+ email: _firstname_@otte.dev
 
  minima:
      social_links:
