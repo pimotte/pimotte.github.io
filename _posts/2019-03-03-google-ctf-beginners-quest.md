@@ -12,4 +12,4 @@ find my attempts at the several paths:
 Middle path
 -----------
 
-1. {{ site.baseurl }}{% post_url 2019-03-03-google-ctf-icon-file %} 
+1. [.ico file]({{ site.baseurl }}{% post_url 2019-03-03-google-ctf-icon-file %})
