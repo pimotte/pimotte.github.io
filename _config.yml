@@ -16,3 +16,11 @@
      social_links:
          github: pimotte
 
+plugins:
+  - jekyll-analytics
+
+
+jekyll_analytics:
+  GoogleAnalytics:          # Add, if you want to track with Google Analytics
+    id: UA-16783668-6          # Required - replace with your tracking id
+    anonymizeIp: true 
