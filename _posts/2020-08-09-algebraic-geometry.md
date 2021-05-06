@@ -11,42 +11,25 @@ We prove it is injective by induction.
 
 ### Base case (n=0)
 
-In case $$n=0$$, the polynomials are constant. Hence, if the functions are the same, they must be the same constant, and thus the same polynomial.
+In case $$n=0$$, the polynomials are constants. Hence, if the functions are the same, they must be the same constant, and thus the same polynomial.
 
 ### Induction step
 
 Assume $$\psi_i$$ is injective.
 
-Let $$p_1, p_2 \in k[x_1, x_2, \ldots, x_{i+1}] \textrm{ s.t. } \psi_{i+1}(p_1) = \psi_{i+1}(p_2)$$ with coefficients $$a_j, b_j$$ respectively.
-Evaluating at $$0$$ gives that $$a_0 = b_0$$
+Let $$p_1, p_2 \in k[x_1, x_2, \ldots, x_{i+1}] \textrm{ s.t. } \psi_{i+1}(p_1) = \psi_{i+1}(p_2)$$.
 
-Then $$\forall x \in k$$ non-zero:
 
-$$
-    \sum_{j=0}^{i+1} a_j x^j = \sum_{j=0}^{i+1} b_j x^j
-$$
+Then magic?
 
-$$
-     \sum_{j=1}^{i+1} a_j x^j = \sum_{j=1}^{i+1} b_j x^j
-$$
 
-$$
-     x\sum_{j=1}^{i+1} a_j x^{j-1} = x\sum_{j=1}^{i+1} b_j x^{j-1}
-$$
 
-Since $$x \neq 0$$ and $$k$$ is a field:
-
-$$
-     \sum_{j=1}^{i+1} a_j x^{j-1} = \sum_{j=1}^{i+1} b_j x^{j-1}
-$$
-
-By injectivity of $$\psi_i$$, $$a_j = b_j$$ for $$1 \leq j \leq i+1$$. Hence, $$p_1 = p_2$$ so $$\psi_{i+1}$$ is injective.
 
 ## Exercise 1.2
 
-Let $$I = \langle (x-1)(x+1) \rangle, J = \langle (x-1) \rangle$$. Then $$\mathcal{L}(I) = \{-1, 1\}, \mathcal{L}(J) = \{1\}$$
-Hence $$\mathcal{L}(I) \cup \mathcal{L}(J) = \{-1, 1\}$$. $$I \cap J = \langle (x-1) \rangle$$, so $$\mathcal{L}(I \cap J) = \{1\}$$,
-so in general $$\mathcal{L}(I \cap J) \neq \mathcal{L}(I) \cup \mathcal{L}(J)$$
+Let $$I = \langle (x-1)(x+1) \rangle, J = \langle (x-1) \rangle$$. Then $$\mathscr{L}(I) = \{-1, 1\}, \mathscr{L}(J) = \{1\}$$
+Hence $$\mathscr{L}(I) \cup \mathscr{L}(J) = \{-1, 1\}$$. $$I \cap J = \langle (x-1) \rangle$$, so $$\mathscr{L}(I \cap J) = \{1\}$$,
+so in general $$\mathscr{L}(I \cap J) \neq \mathscr{L}(I) \cup \mathscr{L}(J)$$
 
 ## Exercise 1.3
 
@@ -82,8 +65,50 @@ not in any prime ideal. Therefore the intersection of all prime ideals containin
 
 ## Exercise 1.5
 
-(i): Let $$X \subset U$$, irreducible, non-empty and open. Suppose $$U$$ is reducible: $$U_1, U_2 \subsetneq U$$ closed s.t. 
-$$U_1 \cup U_2 = U$$. 
+(i): Let $$U \subset X$$, non-empty and open. Suppose $$U$$ is reducible: $$U_1, U_2 \subsetneq U$$ closed in $$U$$ s.t. 
+$$U_1 \cup U_2 = U$$. So there exist $$X_1, X_2 \subset X$$ closed, s.t. $$X_1 \cap U =  U_1$$ and $$X_2 \cap U = U_2$$. Therefore $$X_1 \cup X_2 \cup U^\complement = X$$, which are all closed sets, which contradicts the irreducibility of $$X$$. So $$U$$ is irreducible.
+
+Suppose $$U$$ is not dense, then there exists an open subset $$X_3 \subset U^\complement$$. Then $$X_3^\complement \cup U^\complement = X$$
+which contradicts the irreducibility of $$X$$.
+
+A single point is Hausdorff. Suppose $$|X| > 1$$, then let $$x_1, x_2 \in X$$. Then any open set around $$x_1$$ is dense, therefore it intersects
+any open set around $$x_2$$, so there can not be disjoint neighbourhoods, so $$X$$ is not Hausdorff.
+
+(ii) Probably something using $$\overline{Y} = \partial Y \cup Y$$ and the fact the boundary is closed?
+
+## Exercise 1.6
+
+Let $$A \subset \mathbb{A}^n$$ an affine variety. Let $$\bigcup_{i \geq 0} O_i$$ be an open cover of $$A$$.
+Then $$(\bigcap_{i=0}^m O_i^\complement)_m$$ is a descending chain of closed subsets. Since $$mathbb{A}$$ is Noetherian
+this is a stable chain. Hence $$A \subseteq \bigcup_{i=0}^m O_i$$ for some $$m$$, so every finite cover has an open subcover.
+
+Note: I'm missing something here, I'm using no properties of $$A$$?
+
+## Exercise 1.7
+
+We show that $$f$$ is continuous. Let $$Y \subseteq \mathbb{A}^n$$ closed. We show that $$f^{-1}(Y)$$ is closed. 
+Since $$Y$$ is closed, $$\mathscr{L}(S) = Y$$ for some finite set $$S \subset k[x_1, \ldots, x_m]$$.
+
+We define $$S' = \{s \circ f_i \forall s \in S, i \in [0, m]\}$$
+
+Then:
+
+$$
+\begin{align}
+     f^{-1}(Y) &= \{ x \in \mathbb{A}^n: f(x) \in Y\} \\
+     &= \{ x \in \mathbb{A}^n: s(f(x)) = 0 \forall s \in S\} \\
+     &= \{ x \in \mathbb{A}^n: s(f_i(x)) = 0 \forall s \in S, i \in [0, m]\} \\
+     &= \{ x \in \mathbb{A}^n: f(x) \in Y\} &&
+\end{align}
+$$
+
+So, $$f^{-1}(Y)$$ is closed, so $$f$$ is continuous.
+
+As for a counter-example that $$f$$ is a closed map: let $$n=m=1$$, $$ f_1 = x^2$$, which maps $$\mathbb{A}^1$$ to $$[0, 
+\infty)$$, which is not closed in the co-finite topology.
+
+
+
 
 
 
