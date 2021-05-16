@@ -15,12 +15,11 @@ In case $$n=0$$, the polynomials are constants. Hence, if the functions are the 
 
 ### Induction step
 
-Assume $$\psi_i$$ is injective.
+Assume $$\psi_i$$ is injective. It suffices to show that $$\ker \psi_{i+1}= 0$$
 
-Let $$p_1, p_2 \in k[x_1, x_2, \ldots, x_{i+1}] \textrm{ s.t. } \psi_{i+1}(p_1) = \psi_{i+1}(p_2)$$.
+Let $$p \in k[x_1, x_2, \ldots, x_{i+1}] \textrm{ s.t. } \psi_{i+1}(p) = 0$$.
 
-
-Then magic?
+TODO: No clue how to procede.
 
 
 
@@ -79,10 +78,10 @@ any open set around $$x_2$$, so there can not be disjoint neighbourhoods, so $$X
 ## Exercise 1.6
 
 Let $$A \subset \mathbb{A}^n$$ an affine variety. Let $$\bigcup_{i \geq 0} O_i$$ be an open cover of $$A$$.
-Then $$(\bigcap_{i=0}^m O_i^\complement)_m$$ is a descending chain of closed subsets. Since $$mathbb{A}$$ is Noetherian
+Then $$(\bigcap_{i=0}^m O_i^\complement)_m$$ is a descending chain of closed subsets. Since $$\mathbb{A}^n$$ is Noetherian
 this is a stable chain. Hence $$A \subseteq \bigcup_{i=0}^m O_i$$ for some $$m$$, so every finite cover has an open subcover.
 
-Note: I'm missing something here, I'm using no properties of $$A$$?
+TODO: I'm missing something here, I'm using no properties of $$A$$?
 
 ## Exercise 1.7
 
@@ -107,7 +106,29 @@ So, $$f^{-1}(Y)$$ is closed, so $$f$$ is continuous.
 As for a counter-example that $$f$$ is a closed map: let $$n=m=1$$, $$ f_1 = x^2$$, which maps $$\mathbb{A}^1$$ to $$[0, 
 \infty)$$, which is not closed in the co-finite topology.
 
+(ii): Let $$p_1, p_2 \in k[x_1, \ldots, x_n]$$. The natural map is clearly an injection. Injectivity follows from showing
+that the kernel is exactly $$\mathscr{I}(Y)$$, with the same trick I'm missing in 1.1. 
 
+(iii): Suppose $$f \neq 0$$ and $$g \neq 0$$. Note that $$f^{-1}(\{0\}) \subsetneq Y$$ and $$g^{-1}(\{0\}) \subsetneq Y$$. Since $$k$$ is a field, products of non-zero elements are non-zero, so since $$fg=0$$, for each $$x \in Y$$, either $$f(x)=0$$ or $$g(x)=0$$. Hence $$f^{-1}(\{0\}) \cup g^{-1}(\{0\}) = Y$$, but this contradicts the irreducibility of the affine variety $$Y$$. Hence, $$f = 0$$ or $$g = 0$$.
+
+## Exercise 1.8
+
+Let $$S=\{x^4-y^3, x^5-z^3, y^5-z^4\}$$. Clearly $$X \subseteq \mathscr{L}(S)$$. If we could prove the equality, that would prove that $$X$$ is closed, and these polynomials would generate $$\mathscr{I}$$. TODO: How to prove? How to do the irreducible components of two of these?
+
+## Exercise 1.9
+
+Factoring the given polynomials yields $$y^4-x^6 = (y^2+x^3)(y^2-x^3)$$ and $$y^3-xy^2-yx^3+x^4=(x-y)(x^3-y^2)$$
+
+This means that the set $$x^3=y^2$$ is one of the irreducible components. Then the other component has $$x=y$$ and $$y^2=-x^3$$, so $$x=y=-1$$ is the other component.
+
+## Exercise 1.10
+
+(i): The irreducible components of $$\mathscr{L}(f)$$ are the zero serts of the factors of $$f$$.
+
+(ii): Suppose $$\mathscr{L}(f)$$ has an inifinite closed set, $$X \subsetneq \mathscr{L}$$. Then there exists a polynomial $$g \in k[x,y]$$, such that $$\mathscr{L}(f) 
+\cap \mathscr{L}(g) = X$$. Then intuitively, it has to divide $$f$$. TODO: Harden this intuition.
+
+(iii): The closed sets $$\mathscr{L}(x^2+y^2) \cup \{0, 0\}$$ and $$\mathscr{L}(x^2+y^2) \cup \{42, 42\}$$ are reducible, but the intersection is irreducible (just the circle).
 
 
 
