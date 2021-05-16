@@ -130,6 +130,10 @@ This means that the set $$x^3=y^2$$ is one of the irreducible components. Then t
 
 (iii): The closed sets $$\mathscr{L}(x^2+y^2) \cup \{0, 0\}$$ and $$\mathscr{L}(x^2+y^2) \cup \{42, 42\}$$ are reducible, but the intersection is irreducible (just the circle).
 
+## Exercise 1.11
+
+TODO: Not started
+
 
 
 
