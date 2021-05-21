@@ -15,21 +15,32 @@ In case $$n=0$$, the polynomials are constants. Hence, if the functions are the 
 
 ### Induction step
 
-Assume $$\psi_i$$ is injective. It suffices to show that $$\ker \psi_{i+1}= 0$$
+Assume $$\psi_i$$ is injective. 
 
-Let $$p \in k[x_1, x_2, \ldots, x_{i+1}] \textrm{ s.t. } \psi_{i+1}(p) = 0$$.
+We define $$\phi: k[x_1, \ldots, x_i][x] \to k[x]$$ by applying $$\psi_{i}$$ to each of the coordinates. Note that $$\phi$$ is injective by injectivity of $$\psi_i$$. Also note that $$\psi_{i+1} = \psi_1 \circ \phi$$, so it suffices to show that $$\psi_1$$ is injective$$.
 
-TODO: No clue how to procede.
+
+Let $$p \in k[x] \textrm{ s.t. } \psi_{1}(p) = 0$$. Since it is the 0 function, and $$k$$ is infinite field, it has an infinite amount of zeroes. Therefore, $$p$$ is the zero polynomial. Hence, $$\psi_1$$ is injective, so $$\psi_{i+1}$$ is injective.
+
+By induction, $$\psi_n$$ is injective for all $$n \geq 0$$
+
+
 
 
 
 
 ## Exercise 1.2
 
-Let $$I = \langle (x-1)(x+1) \rangle, J = \langle (x-1) \rangle$$. Then $$\mathscr{L}(I) = \{-1, 1\}, \mathscr{L}(J) = \{1\}$$
-Hence $$\mathscr{L}(I) \cup \mathscr{L}(J) = \{-1, 1\}$$. $$I \cap J = \langle (x-1) \rangle$$, so $$\mathscr{L}(I \cap J) = \{1\}$$,
-so in general $$\mathscr{L}(I \cap J) \neq \mathscr{L}(I) \cup \mathscr{L}(J)$$
+We consider $$\mathscr{L}(IJ)$$, $$\mathscr{L}(I \cap J)$$ and $$\mathscr{L}(I) \cup \mathscr{L}(J)$$
 
+Since $$\mathscr{L}$$ is inclusion-reversing and $$IJ \subseteq I \cap J$$, $$\mathscr{L}(I \cap J) \subseteq \mathscr{L}(IJ)$$.
+In addition, $$\mathscr{L}(I) \subseteq \mathscr{L}(I \cap J)$$ and $$\mathscr{L}(J) \subseteq \mathscr{L}(I \cap J)$$, so $$\mathscr{L}(I) \cup \mathscr{L}(J) \subseteq \mathscr{L}(I \cap J)$$.
+
+Finally, we prove $$\mathscr{L}(IJ) \subseteq \mathscr{L}(I) \cup \mathscr{L}(J)$$ to prove equality of all three sets.
+
+Let $$x \in \mathscr{L}(IJ) \setminus \mathscr{L}(I)$$. Then: $$\forall p \in IJ, p(x) = 0$$. Let $$q \in I \mathrm{ s.t. } q(x)\neq 0$$.
+
+Then let $$p' \in J$$, then since $$p'q \in IJ$$: $$p'q(x)=p'(x)q(x)=0$$. Since $$q(x) \neq 0$$, $$p'(x)=0$$.  
 ## Exercise 1.3
 
 Let $$I \subset R$$ an ideal. We prove $$\sqrt{I} = \{r \in R : \exists m > 0 \textrm{ s.t. } r^m \in I\}$$ is an ideal.
@@ -57,9 +68,7 @@ Since $$\sqrt{I}$$ is closed under addition and absorbs the ring, it is an ideal
 
 (i): [Clear proof on wikipedia](https://en.wikipedia.org/wiki/Nilradical_of_a_ring#Commutative_rings)
 
-(ii): Since $$\sqrt{I} \subset I$$, $$\sqrt{I}$$ is contained in the intersection of all prime ideals containing $$I$$.
-Since $$\sqrt{0} \subset \sqrt{I}$$, any $$a \notin \sqrt{I}$$ is also non-nilpotent, so per proof on wikipedia above, it is
-not in any prime ideal. Therefore the intersection of all prime ideals containing $$I$$ contains $$\sqrt{I}$$.
+(ii): Apply (i) to $$R / \sqrt{I}$$
 
 
 ## Exercise 1.5
@@ -73,7 +82,8 @@ which contradicts the irreducibility of $$X$$.
 A single point is Hausdorff. Suppose $$|X| > 1$$, then let $$x_1, x_2 \in X$$. Then any open set around $$x_1$$ is dense, therefore it intersects
 any open set around $$x_2$$, so there can not be disjoint neighbourhoods, so $$X$$ is not Hausdorff.
 
-(ii) Probably something using $$\overline{Y} = \partial Y \cup Y$$ and the fact the boundary is closed?
+(ii) Suppose $$\overline{Y} = Y_1 \cup Y_2$$ is a reduction of $$\overline{Y}$$, then $$Y'_1=Y_1 \cap Y, Y'_2= Y_2 \cap Y$$ is a reduction of $$Y$$. 
+Clearly, these sets are closed, because they are closed in the bigger $$\overline{Y}$$. $$Y'_1, Y'_2$$ must be proper subsets, because if they were not, then $$Y_1$$ or $$Y_2$$ would also not be proper subsets of $$\overline{Y}$$ which they are by definiton.
 
 ## Exercise 1.6
 
