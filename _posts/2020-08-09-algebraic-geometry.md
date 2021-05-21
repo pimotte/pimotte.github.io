@@ -116,8 +116,8 @@ So, $$f^{-1}(Y)$$ is closed, so $$f$$ is continuous.
 As for a counter-example that $$f$$ is a closed map: let $$n=m=1$$, $$ f_1 = x^2$$, which maps $$\mathbb{A}^1$$ to $$[0, 
 \infty)$$, which is not closed in the co-finite topology.
 
-(ii): Let $$p_1, p_2 \in k[x_1, \ldots, x_n]$$. The natural map is clearly an injection. Injectivity follows from showing
-that the kernel is exactly $$\mathscr{I}(Y)$$, with the same trick I'm missing in 1.1. 
+(ii): The kernel of the natural map is $$\mathscr{I}(Y)$$ by definition, so $$A(Y)$$ is isomorphic to the image of the natural map.
+$$F(Y, k)$$ contains the image, but injectivity remains for the map $$A(Y) \to F(Y, k)$$
 
 (iii): Suppose $$f \neq 0$$ and $$g \neq 0$$. Note that $$f^{-1}(\{0\}) \subsetneq Y$$ and $$g^{-1}(\{0\}) \subsetneq Y$$. Since $$k$$ is a field, products of non-zero elements are non-zero, so since $$fg=0$$, for each $$x \in Y$$, either $$f(x)=0$$ or $$g(x)=0$$. Hence $$f^{-1}(\{0\}) \cup g^{-1}(\{0\}) = Y$$, but this contradicts the irreducibility of the affine variety $$Y$$. Hence, $$f = 0$$ or $$g = 0$$.
 
