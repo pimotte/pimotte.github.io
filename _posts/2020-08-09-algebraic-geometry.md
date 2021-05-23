@@ -31,14 +31,14 @@ By induction, $$\psi_n$$ is injective for all $$n \geq 0$$
 
 ## Exercise 1.2
 
-We consider $$\mathscr{L}(IJ)$$, $$\mathscr{L}(I \cap J)$$ and $$\mathscr{L}(I) \cup \mathscr{L}(J)$$
+We consider $$\mathscr{Z}(IJ)$$, $$\mathscr{Z}(I \cap J)$$ and $$\mathscr{Z}(I) \cup \mathscr{Z}(J)$$
 
-Since $$\mathscr{L}$$ is inclusion-reversing and $$IJ \subseteq I \cap J$$, $$\mathscr{L}(I \cap J) \subseteq \mathscr{L}(IJ)$$.
-In addition, $$\mathscr{L}(I) \subseteq \mathscr{L}(I \cap J)$$ and $$\mathscr{L}(J) \subseteq \mathscr{L}(I \cap J)$$, so $$\mathscr{L}(I) \cup \mathscr{L}(J) \subseteq \mathscr{L}(I \cap J)$$.
+Since $$\mathscr{Z}$$ is inclusion-reversing and $$IJ \subseteq I \cap J$$, $$\mathscr{Z}(I \cap J) \subseteq \mathscr{Z}(IJ)$$.
+In addition, $$\mathscr{Z}(I) \subseteq \mathscr{Z}(I \cap J)$$ and $$\mathscr{Z}(J) \subseteq \mathscr{Z}(I \cap J)$$, so $$\mathscr{Z}(I) \cup \mathscr{Z}(J) \subseteq \mathscr{Z}(I \cap J)$$.
 
-Finally, we prove $$\mathscr{L}(IJ) \subseteq \mathscr{L}(I) \cup \mathscr{L}(J)$$ to prove equality of all three sets.
+Finally, we prove $$\mathscr{Z}(IJ) \subseteq \mathscr{Z}(I) \cup \mathscr{Z}(J)$$ to prove equality of all three sets.
 
-Let $$x \in \mathscr{L}(IJ) \setminus \mathscr{L}(I)$$. Then: $$\forall p \in IJ, p(x) = 0$$. Let $$q \in I \mathrm{ s.t. } q(x)\neq 0$$.
+Let $$x \in \mathscr{Z}(IJ) \setminus \mathscr{Z}(I)$$. Then: $$\forall p \in IJ, p(x) = 0$$. Let $$q \in I \mathrm{ s.t. } q(x)\neq 0$$.
 
 Then let $$p' \in J$$, then since $$p'q \in IJ$$: $$p'q(x)=p'(x)q(x)=0$$. Since $$q(x) \neq 0$$, $$p'(x)=0$$.  
 ## Exercise 1.3
@@ -96,7 +96,7 @@ TODO: I'm missing something here, I'm using no properties of $$A$$?
 ## Exercise 1.7
 
 We show that $$f$$ is continuous. Let $$Y \subseteq \mathbb{A}^n$$ closed. We show that $$f^{-1}(Y)$$ is closed. 
-Since $$Y$$ is closed, $$\mathscr{L}(S) = Y$$ for some finite set $$S \subset k[x_1, \ldots, x_m]$$.
+Since $$Y$$ is closed, $$\mathscr{Z}(S) = Y$$ for some finite set $$S \subset k[x_1, \ldots, x_m]$$.
 
 We define $$S' = \{s \circ f_i \forall s \in S, i \in [0, m]\}$$
 
@@ -107,14 +107,14 @@ $$
      f^{-1}(Y) &= \{ x \in \mathbb{A}^n: f(x) \in Y\} \\
      &= \{ x \in \mathbb{A}^n: s(f(x)) = 0 \forall s \in S\} \\
      &= \{ x \in \mathbb{A}^n: s(f_i(x)) = 0 \forall s \in S, i \in [0, m]\} \\
-     &= \{ x \in \mathbb{A}^n: f(x) \in Y\} &&
+     &= \mathscr{Z}(S') \\
 \end{align}
 $$
 
 So, $$f^{-1}(Y)$$ is closed, so $$f$$ is continuous.
 
-As for a counter-example that $$f$$ is a closed map: let $$n=m=1$$, $$ f_1 = x^2$$, which maps $$\mathbb{A}^1$$ to $$[0, 
-\infty)$$, which is not closed in the co-finite topology.
+As for a counter-example that $$f$$ is a closed map: let $$n=2, m=2$$, $$f_1 = (x-1)x, f_2=(x-1)y$$, which maps $$\mathscr{Z}(y-1)$$ to 
+$$\{(x, 1): x\neq 1\} \cup \{0, 0\}$$, which is not closed.
 
 (ii): The kernel of the natural map is $$\mathscr{I}(Y)$$ by definition, so $$A(Y)$$ is isomorphic to the image of the natural map.
 $$F(Y, k)$$ contains the image, but injectivity remains for the map $$A(Y) \to F(Y, k)$$
@@ -123,22 +123,65 @@ $$F(Y, k)$$ contains the image, but injectivity remains for the map $$A(Y) \to F
 
 ## Exercise 1.8
 
-Let $$S=\{x^4-y^3, x^5-z^3, y^5-z^4\}$$. Clearly $$X \subseteq \mathscr{L}(S)$$. If we could prove the equality, that would prove that $$X$$ is closed, and these polynomials would generate $$\mathscr{I}$$. TODO: How to prove? How to do the irreducible components of two of these?
+Let $$S=\{x^4-y^3, x^5-z^3, y^5-z^4\}$$. Clearly $$X \subseteq \mathscr{Z}(S)$$. If we could prove the equality, that would prove that $$X$$ is closed, and these polynomials would generate $$\mathscr{I}$$.
+
+
+To prove $$\mathscr{Z}(S) \subseteq X$$: Let $$(a, b, c) \in \mathscr{Z}(S)$$. Note that if one is $$0$$, the others must be as well and this is also in $$X$$. Suppose $$a, b, c \neq 0$$. Then we write $$a'=\frac{a}{t^3}, b'=\frac{b}{t^4}, c'=\frac{c}{t^5}$$, then we choose $$t$$ such that $$a=t^3$$, hence $$a'=1$$. We show $$(a', b', c') \in \mathscr{Z}(S)$$. Subsitution gives:
+
+$$
+\begin{align*}
+     1-b'^3&=0 \\
+     1-c'^3&=0 \\
+     b'^5-c'^4&=0 \\
+\end{align*}
+$$
+
+So:
+
+$$
+\begin{align*}
+     b'^3&=1 \\
+     c'^3&=1 \\
+     b'^5&=c'^4 \\
+\end{align*}
+$$
+
+So:
+
+$$
+\begin{align*}
+     b'^2&=c'\\
+     b'c'&=1\\
+\end{align*}
+$$
+
+So:
+
+$$
+\begin{align*}
+     b'^3&=1 \\
+     (b'^{-1})^3 &= 1 \\
+\end{align*}
+$$
+
+
+So $$b'=c'=1$$.
+
 
 ## Exercise 1.9
 
 Factoring the given polynomials yields $$y^4-x^6 = (y^2+x^3)(y^2-x^3)$$ and $$y^3-xy^2-yx^3+x^4=(x-y)(x^3-y^2)$$
 
-This means that the set $$x^3=y^2$$ is one of the irreducible components. Then the other component has $$x=y$$ and $$y^2=-x^3$$, so $$x=y=-1$$ is the other component.
+This means that the set $$x^3=y^2$$ is one of the irreducible components. Then the other component has $$x=y$$ and $$y^2=-x^3$$, so $$x=y=-1$$ is the other component ($$x=y=0$$ is already included in the other component).
 
 ## Exercise 1.10
 
-(i): The irreducible components of $$\mathscr{L}(f)$$ are the zero serts of the factors of $$f$$.
+(i): The irreducible components of $$\mathscr{Z}(f)$$ are the zero serts of the factors of $$f$$.
 
-(ii): Suppose $$\mathscr{L}(f)$$ has an inifinite closed set, $$X \subsetneq \mathscr{L}$$. Then there exists a polynomial $$g \in k[x,y]$$, such that $$\mathscr{L}(f) 
-\cap \mathscr{L}(g) = X$$. Then intuitively, it has to divide $$f$$. TODO: Harden this intuition.
+(ii): Suppose $$\mathscr{Z}(f)$$ has an inifinite closed set, $$X \subsetneq \mathscr{Z}$$. Then there exists a polynomial $$g \in k[x,y]$$, such that $$\mathscr{Z}(f) 
+\cap \mathscr{Z}(g) = X$$. Then intuitively, it has to divide $$f$$. TODO: Harden this intuition.
 
-(iii): The closed sets $$\mathscr{L}(x^2+y^2) \cup \{0, 0\}$$ and $$\mathscr{L}(x^2+y^2) \cup \{42, 42\}$$ are reducible, but the intersection is irreducible (just the circle).
+(iii): The closed sets $$\mathscr{Z}(x^2+y^2-1) \cup \{0, 0\}$$ and $$\mathscr{Z}(x^2+y^2-1) \cup \{42, 42\}$$ are reducible, but the intersection is irreducible (just the circle).
 
 ## Exercise 1.11
 
