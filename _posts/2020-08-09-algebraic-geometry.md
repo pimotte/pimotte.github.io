@@ -126,7 +126,7 @@ $$F(Y, k)$$ contains the image, but injectivity remains for the map $$A(Y) \to F
 Let $$S=\{x^4-y^3, x^5-z^3, y^5-z^4\}$$. Clearly $$X \subseteq \mathscr{Z}(S)$$. If we could prove the equality, that would prove that $$X$$ is closed, and these polynomials would generate $$\mathscr{I}$$.
 
 
-To prove $$\mathscr{Z}(S) \subseteq X$$: Let $$(a, b, c) \in \mathscr{Z}(S)$$. Note that if one is $$0$$, the others must be as well and this is also in $$X$$. Suppose $$a, b, c \neq 0$$. Then we write $$a'=\frac{a}{t^3}, b'=\frac{b}{t^4}, c'=\frac{c}{t^5}$$, then we choose $$t$$ such that $$a=t^3$$, hence $$a'=1$$. We show $$(a', b', c') \in \mathscr{Z}(S)$$. Subsitution gives:
+To prove $$\mathscr{Z}(S) \subseteq X$$: Let $$(a, b, c) \in \mathscr{Z}(S)$$. Note that if one is $$0$$, the others must be as well and this is also in $$X$$. Suppose $$a, b, c \neq 0$$. Then we write $$a'=\frac{a}{t'^3}, b'=\frac{b}{t'^4}, c'=\frac{c}{t'^5}$$, then we choose $$t$$ such that $$a=t'^3$$, hence $$a'=1$$. We show $$(a', b', c') \in \mathscr{Z}(S)$$. Subsitution gives:
 
 $$
 \begin{align*}
@@ -146,12 +146,19 @@ $$
 \end{align*}
 $$
 
-So:
-
 $$
 \begin{align*}
      b'^2&=c'\\
-     b'c'&=1\\
+\end{align*}
+$$
+
+So: 
+
+$$
+\begin{align*}
+     a'&=b'^3\\
+     b'&=b'^4 \\
+     c'&=b'^5 \\
 \end{align*}
 $$
 
@@ -159,15 +166,12 @@ So:
 
 $$
 \begin{align*}
-     b'^3&=1 \\
-     (b'^{-1})^3 &= 1 \\
+     (a, b, c) &= (t'^3a', t'^4b', t'^5c') \\
+     &= (t'^3b'^3, t'^4b'^4, t'^5b'^5 ) \\
 \end{align*}
 $$
 
-
-So $$b'=c'=1$$.
-
-Hence all zeroes are of the form $$(t^3, t^4, t^5)$$.
+Then we choose $$t=t'b'$$, so all zeroes are of the form $$(t^3, t^4, t^5)$$.
 
 Now we determine the components of $$\mathscr{Z}(x^4-y^3, x^5-z^3)$$.
 
@@ -184,22 +188,37 @@ So:
 
 $$
 \begin{align*}
-          (c^5)^3&=a^{3}(b^4)^3 = (ab^4)^3\\
+          (b^4)^3&=a^{12} = (a^4)^3\\
 \end{align*}
 $$
 
 Let $$g$$ generate the subgroup of $$k^*$$ determined by $$x^3-1=0$$. Then:
 
+$$
+\begin{align*}
+          b^4&=a^4 \vee\\
+          b^4&=ga^4 \vee\\
+          b^4&=g^2a^4 \\
+\end{align*}
+$$
+
+In addition:
+
+$$
+\begin{align*}
+          (c^5)^3&=a^{3}(b^4)^3 = (ab^4)^3\\
+\end{align*}
+$$
 
 $$
 \begin{align*}
           c^5&=ab^4 \vee\\
           c^5&=gab^4 \vee\\
-          c^5&=g^2ab^4 \vee\\
+          c^5&=g^2ab^4 \\
 \end{align*}
 $$
 
-So, the components are the sets of the forms: $$(a^3, b^4, ab^4), (a^3, b^4, gab^4), (a^3, b^4, g^2ab^4)$$.
+Since these two roots can be combined in any from, there are six components of the forms: $$(a^3, g^ia^4, g^ja^5), 0 \leq i \leq 2, 0 \leq j \leq 2$$
 
 
 ## Exercise 1.9
@@ -225,22 +244,8 @@ For $$R$$ a commutative ring, we consider $$R'=\mathbb{Z}[x_1, x_2, \ldots, x_{m
 
 ## Exercise A.1.8 
 
-We consider the chain of ideals $$I_n = \langle \{xy^i: 1 \leq i \leq n\} \rangle$$. This is clearly a chain, to prove it to be
-non-stationary, it suffices to show that $$xy^{n+1} \not\in I_n$$.
-
-Note that addition cannot create new terms with respect to the powers, so it suffices to show
-that multiplication cannot increase the maximal degree of $$y$$ in a term just an $$x$$.
-
- Let $$f_1(x) + xg_1(x,y), f_2(x) + xg_2(x,y) \in I_n$$. Then the multiplication is:
-
- $$
-\begin{align*}
-          f_1(x)f_2(x) + x(g_1(x,y)f_2(x) + g_2(x,y)f_1(x)) + x^2g_1(x, y)g_2(x,y)
-\end{align*}
- $$
-
- So, clearly, the degree of $$y$$ in a term with a single $$x$$ is at most the degree of $$y$$ in $$g_1$$ and $$g_2$$. Hence, $$xy{n+1} \not\in I_n$$, so the chain is non-stationary.
-
+We consider the chain of ideals $$I_n = \langle \{xy^i: 1 \leq i \leq n\} \rangle$$. 
+A basis for $$I_n$$ is $$\{ xy^j: 1 \leq j \leq n\} \cup \{x^iy^j: i \geq 2, j \geq 1\}$$. Monomials with just $$x$$ clearly are not in $$I_n$$, multiplication with any element of $$R$$ with a factor $$y$$ needs to be with a monomial containing $$x$$ as well, and arbitrary monomials can be constructed this way. Therefore, $$I_n \subsetneq I_{n+1}$$, so the chain is non-stationary.
 
 ## Exercise A.1.9
 
