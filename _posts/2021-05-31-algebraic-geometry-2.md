@@ -18,9 +18,9 @@ To show this is an element of $$\mathscr{O}_{Y,Z}$$ we need to show $$U_{12} \ca
 
 The unique maximal ideal is $$I = \{[U, f] \in \mathscr{O}_{Y, Z} : f(z) = 0 \forall z \in Z \cap U\}$$. This is clearly an ideal. Let $$[U, g] \in \mathscr{O}_{Y,Z} \setminus I$$, then it has an inverse $$[U \setminus g^{-1}(0), \frac{1}{g}]$$, so this is maximal. 
 
-(ii): The inclusion map $$\mathscr{O}_{Y,Z} \to \mathscr{O}_{Y,\overline{Z}}$$ is injective: If $$[U, f] = 0$$ on $$Z$$, that extends to $$\overline{Z}$$ by Lemma 2.2. Then, to prove the surjectivity, we need to show that $$U \cap \overline{Z} \neq \emptyset$$ then $$U \cap Z \neq \emptyset$$. This follows from the fact that $$$U \cap \overline{Z}$$ is open and dense in $$\overline{Z}$$, so it has non-empty intersection with $$Z$$.
+(ii): The inclusion map $$\mathscr{O}_{Y,Z} \to \mathscr{O}_{Y,\overline{Z}}$$ is injective: If $$[U, f] = 0$$ on $$\overline{Z}$$, then it also is on $$Z$$. Then, to prove the surjectivity, we need to show that $$U \cap \overline{Z} \neq \emptyset$$ then $$U \cap Z \neq \emptyset$$. This follows from the fact that $$U \cap \overline{Z}$$ is open and dense in $$\overline{Z}$$, so it has non-empty intersection with $$Z$$.
 
-(iii): The homomorphism $$A(Y) \to \mathscr{O}_{Y,Z}$$ has exactly $$\mathfrak{p}$$ as kernel by definition of $$\mathscr{O}_{Y,Z}$$. It is surjective, as the homomorphism to $$\mathscr{O}(Y)$$ is surjective. Hence $$A(Y)_{\mathfrak{p}} \simeq \mathscr{O}_{Y,Z}$$
+(iii): The homomorphism $$\mathscr{O}(Y) \to \mathscr{O}_{Y,Z}$$ is injective by Lemma 2.2(ii), hence we have an injection $$A(Y) \to \mathscr{O}_{Y,Z}$$. Localizing at $$\mathfrak{m}$$ yields an injective homomorphsim $$A(Y)_\mathfrak{m} \to \mathscr{O}_{Y,Z}$$. This is surjective by definition of $$ \mathscr{O}_{Y,Z}$$. TODO: This is slight bluff, I don't know why this would be the case.
 
 ## Exercise 2.3
 
@@ -52,23 +52,84 @@ If we have this condition, we can write any matrix in the above form by choosing
 
 ## Exercise 2.4
 
-(i): TODO: Is this even true? We can just send everything to 0, then $$f^{-1}(\mathfrak{m}_2)=R_1 \subsetneq \mathfrak{m}_1$$
+(i): $$f^{-1}(\mathfrak{m}_2)$$ is an ideal of $$R_1$$, and it's a proper ideal, since $$1 \notin \mathfrak{m}_2$$, so it must be contained in $$\mathfrak{m}_1$$, since that is the unique maximal ideal.
 
 (ii): The embedding of $$\mathscr{O}_{Y,Z} \to \mathscr{O}_{Y,P}$$, which is clearly not a local ring homomorphism per exercise 2.2(iii).
 
-(iii): We have $$\varphi^*: f \to f \circ \varphi$$. In this case $$\mathfrak{m}_2$$ are the regular functions that are $$0$$ on $$Q$$ and $$\mathfrak{m}_1$$ are the regular functions that are $$0$$ at $$P$$.
+(iii): We have $$\varphi^*: f \to f \circ \varphi$$. In this case $$\mathfrak{m}_2$$ are the regular functions that are $$0$$ at $$Q$$ and $$\mathfrak{m}_1$$ are the regular functions that are $$0$$ at $$P$$.
 
 To prove: $$\mathfrak{m}_1 \subseteq (\varphi^*)^{-1}(\mathfrak{m}_2)$$.
 
-Let $$g \in \mathfrak{m}_1$$, $$q \in Q$$
+Let $$g \in \mathfrak{m}_1$$
 We show that $$g' = g \circ \varphi = \phi^*(g) \in \mathfrak{m}_2$$
 
 $$
 \begin{align*}
           (g \circ \varphi)(P) &= (g(\varphi(P))) \\
-          &= (g(q)) = 0 \\ 
+          &= (g(Q)) = 0 \\ 
 \end{align*}
 $$
 
-where $$q \in Q$$, so $$g'$$ is zero at $$P$$, so in $$\mathfrak{m}_2$$.
+so $$g'$$ is zero at $$P$$, so in $$\mathfrak{m}_2$$.
 
+## Exercise 2.5
+
+The elements of $$\mathrm{SL}_4$$ are of the form:
+
+$$
+\begin{pmatrix}
+x_{11}& x_{12}\\
+x_{21}& x_{22}\\
+\end{pmatrix}
+\to
+
+\frac{1}{ad-bc}
+\begin{pmatrix}
+a&b\\
+c&d\\
+\end{pmatrix}
+\begin{pmatrix}
+x_{11}& x_{12}\\
+x_{21}& x_{22}\\
+\end{pmatrix}
+\begin{pmatrix}
+a&b\\
+c&d\\
+\end{pmatrix}^{-1}
+$$
+
+
+The image is therefore of the form:
+
+$$
+\frac{1}{ad-bc}
+\begin{pmatrix}
+ad & -ac & bd & -bc\\
+-ab & a^2 & -b^2 & ab \\
+cd & -c^2 & d^2 & -cd \\
+-bc & ac & -bd & ad \\
+\end{pmatrix}
+$$
+
+This results in at least the following equations
+
+$$
+\begin{align*}
+x_{11} &= x_{44} \\
+x_{12} &= -x_{42} \\
+x_{13} &= -x_{43} \\
+x_{14} &= x_{41} \\
+x_{21} &= -x_{24} \\
+x_{31} &= -x_{34} \\
+x_{11}x_{12} &= x_{22}x_{34} \\
+x_{11}x_{21} &= x_{22}x_{43} \\
+x_{14}x_{13} &= x_{23}x_{31} \\
+x_{14}x_{24} &= x_{23}x_{42} \\
+x_{41}x_{31} &= x_{32}x_{13} \\
+x_{41}x_{42} &= x_{32}x_{24} \\
+x_{44}x_{34} &= x_{33}x_{12} \\
+x_{44}x_{43} &= x_{33}x_{21} \\
+\end{align*}
+$$
+
+TODO: How to continue? Seperate in cases for the different roots of $$x_{22} = a^2$$ etc?
