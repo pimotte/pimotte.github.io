@@ -132,10 +132,14 @@ x_{44}x_{43} &= x_{33}x_{21} \\
 \end{align*}
 $$
 
-TODO: How to continue? Seperate in cases for the different roots of $$x_{22} = a^2$$ etc?
+TODO: How to continue? Seperate in cases for the different roots of $$x_{22} = a^2$$ etc? Also, intuitively, I think we need another equation from a dimensionality perspective?
 
 
 (ii):
+
+TODO: Restructure the map to something were we use one variabale less and then recover that information from the trace?
+
+
 ## Exercise A.2.3
 
 If $$R$$ is a domain, then all elements in $$S$$ are invertible, so if elements are equal in $$S^{-1}R$$ then there exists a $$t \in S$$ such that 
