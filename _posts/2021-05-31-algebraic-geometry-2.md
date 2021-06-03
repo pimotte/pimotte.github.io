@@ -133,3 +133,18 @@ x_{44}x_{43} &= x_{33}x_{21} \\
 $$
 
 TODO: How to continue? Seperate in cases for the different roots of $$x_{22} = a^2$$ etc?
+
+
+(ii):
+## Exercise A.2.3
+
+If $$R$$ is a domain, then all elements in $$S$$ are invertible, so if elements are equal in $$S^{-1}R$$ then there exists a $$t \in S$$ such that 
+$$t(r_1s_2-r_2s_1) = 0$$, so $$r_1s_2=r_2s_2$$, which is the equivalence condition for $$\mathrm{Frac}(R)$$. Definition of $$\varphi$$ shows it's simply the inclusion.
+
+## Exercise A.2.4
+
+Suppose $$S$$ has no zero divisors. Let $$r \in \ker \varphi$$. Then there exists $$t \in S$$ such that $$t(r\cdot 1-0)=0$$. Then either $$r = 0$$ or $$t$$ is a zero-divider, so $$\varphi$$ must be injective.
+
+Let $$t \in S$$ be a zero divider. Then there exists an $$r \neq 0 \in R$$ such that $$rt = 0$$. Then $$t(r-0)=0$$, so $$r/1$$ is equal to $$0/1$$, so $$r \in \ker \varphi$$, so $$\varphi$$ is not injective.
+
+
