@@ -22,7 +22,30 @@ each zero in $$p$$, so, $$f_j \in I'$$, so $$I'$$ is homogeneous.
 
 Therefore, $$\mathbb{P}^n \setminus U$$ corresponds to a homogeneous ideal, so it's closed, so $$U$$ is open.
 
-Finally, showing that $$q$$ is a morphism. 
+Finally, showing that $$q$$ is a morphism. Let $$U \subseteq \mathbb{P}^N$$ open. Let $$f \in \mathcal{O}_{\mathbb{P}^n}(U)$$.
+
+Then we need to show that $$f \circ q: q^{-1}(U) \to k$$ is regular on $$q^{-1}(U) \subseteq \mathbb{A}^{n+1} \setminus \{ O \}$$.
+
+Since $$f$$ is regular, it can be expressed as fraction of homogeneous polynomials on an open subset $$V \subset \mathbb{P}^n$$ around each point  $$P$$ in $$U$$. Expressing it as the same fraction, that means that it is regular at $$q^{-1}(P)$$, using the open subset $$q^{-1}(V)$$.
+
+
+## Exercise 3.2
+
+(i): Suppose the corresponding ideal is homogeneous, then clearly the zeroes of that ideal are stable under $$\mathbb{G}_m$$.
+
+Suppose the zeroes are stable under $$\mathbb{G}_m$$, then the ideal is homogeneous by the same argument as the claim above.
+
+(ii): Suppose $$Z = Z_1 \cup Z_2$$ is a reduction of $$Z$$, then $$q^{-1}(Z_1) \cup q^{-1}(Z_2)$$ is a reduction of $$q^{-1}(Z)$$.
+
+TODO: Reverse direction
+
+(iii): We start with the inclusion-reversing bijection between $$\{\textrm{closed irreducible subsets of } \mathbb{A}^{n+1}\}$$ and
+$$\{ \textrm{prime ideals of } k[x_0, \ldots, x_n]\}$$. Note that $$\{ O \}$$ corresponds with $$S_{>0}$$, so this yields
+the bijection between  $$\{\textrm{closed irreducible subsets of } \mathbb{A}^{n+1} \setminus \{ O\}\}$$ and
+$$\{ \textrm{prime ideals } \mathfrak{p} \subset k[x_0, \ldots, x_n] \textrm{ with } \mathfrak{p} \neq S_{>0} \}$$.
+Then the subsets that are stable under $$\mathbb{G}_m$$ can be identified with subsets of $$\mathrm{P}^n$$. This yields
+the bijection $$\{\textrm{closed irreducible subsets of } \mathbb{P}^{n}\}$$ and
+$$\{ \textrm{homogeneous prime ideals } \mathfrak{p} \subset k[x_0, \ldots, x_n] \textrm{ with } \mathfrak{p} \neq S_{>0} \}$$
 
 
 
