@@ -111,34 +111,40 @@ cd & -c^2 & d^2 & -cd \\
 \end{pmatrix}
 $$
 
-This results in at least the following equations
+Simple case:
+
+Determine the ideal of $$X = \{(a^2,ab,b^2) | a,b \in K\}$$.
+The ideal of $$X$$ contains $$xz-y^2$$. We show that this polynomial generates I(X).
+Let $$f$$ in $$K[x,y,z]$$ be a polynomial. Then $$f$$ in I(X) iff $$f(u^2,uv,v^2)=0$$ where $$u,v$$ are variables. 
+Write $$f = \sum_{i,j,k} c_{ijk} x^i y^j z^k$$. Then the coefficient of $$f(u^2,uv,v^2)$$ at 
+$$u^\alpha v^\beta$$ equals $$\sum_{i,j,k : 2i+j=\alpha, j+2k=\beta} c_{ijk}$$. 
+It follows that I(X) is spanned linearly by the binomials $$x^i y^j z^k - x^{i'} y^{j'} z^{k'}$$ where $$2i+j = 2i'+j'$$ and $$j+2k = j'+2k'$$.
+We now need to show that any such binomial is a multiple of $$xz-y^2$$. If $$\min(i,i')>0$$, we can divide by $$x$$.  
+If $$\min(j,j')>0$$, we can divide by $$y$$. If $$\min(k,k')>0$$, we can divide by $$z$$.
+So we may assume these minima are all zero. 
+So the binomial equals one of $$\pm 1$$ times $$x^i y^j z^k - 1$$, $$x^i y^j - z^{k'}$$, $$x^i z^k - y^j$$ or $$y^jz^k - x^i$$
+In the first case, $$i=j=k=0$$ and $$1-1$$ is indeed a multiple of $$xz-y^2$$. 
+In the second case, the same.  In the third case, $$2i = j = 2k$$, and $$(xz)^k - y^{2k}$$ is indeed a multiple of $$xz-y^2$$. 
+In the fourth case, $$i=j=k=0$$ again.
+
+We note that we can write the above set as an intersection of sets in $$\mathbb{A}^{16}$$ of the following form, with all variables in $$k$$
 
 $$
 \begin{align*}
-x_{11} &= x_{44} \\
-x_{12} &= -x_{42} \\
-x_{13} &= -x_{43} \\
-x_{14} &= x_{41} \\
-x_{21} &= -x_{24} \\
-x_{31} &= -x_{34} \\
-x_{11}x_{12} &= x_{22}x_{34} \\
-x_{11}x_{21} &= x_{22}x_{43} \\
-x_{14}x_{13} &= x_{23}x_{31} \\
-x_{14}x_{24} &= x_{23}x_{42} \\
-x_{41}x_{31} &= x_{32}x_{13} \\
-x_{41}x_{42} &= x_{32}x_{24} \\
-x_{44}x_{34} &= x_{33}x_{12} \\
-x_{44}x_{43} &= x_{33}x_{21} \\
-x_{11}^2 &= x_{22}x_{33} \\
-x_{12}^2 &= x_{22}x_{32} \\
-x_{13}^2 &= x_{23}x_{33} \\
-x_{14}^2 &= x_{23}x_{32} \\
-x_{21}^2 &= x_{22}x_{23} \\
-x_{31}^2 &= x_{23}x_{33} \\
+&(ad, x_2, x_3, x_4, x_5, a^2, x_7, x_8, x_9, x_{10}, d^2, x_{12}, x_{13}, x_{14}, x_{15}, x_{16})
+&(x_1, -ac, x_3, x_4, x_5, a^2, x_7, x_8, x_9, -c^2, x_{11}, x_{12}, x_{13}, x_{14}, x_{15}, x_{16})
+&(x_1, x_2, x_3, x_4, -ab, a^2, -b^2, x_8, x_9, -c^2, d^2, -cd, x_{13}, x_{14}, x_{15}, x_{16})
+&(x_1, x_2, x_3, x_4, x_5, x_6, x_7, x_8, x_9, x_{10}, x_{11}, x_{12}, x_{13}, x_{14}, x_{15}, x_{16})
+&(x_1, x_2, x_3, x_4, x_5, x_6, x_7, x_8, x_9, x_{10}, x_{11}, x_{12}, x_{13}, x_{14}, x_{15}, x_{16})
+&(x_1, x_2, x_3, x_4, x_5, x_6, x_7, x_8, x_9, x_{10}, x_{11}, x_{12}, x_{13}, x_{14}, x_{15}, x_{16})
+&(x_1, x_2, x_3, x_4, x_5, x_6, x_7, x_8, x_9, x_{10}, x_{11}, x_{12}, x_{13}, x_{14}, x_{15}, x_{16})
+&(x_1, x_2, x_3, x_4, x_5, x_6, x_7, x_8, x_9, x_{10}, x_{11}, x_{12}, x_{13}, x_{14}, x_{15}, x_{16})
+&(x_1, x_2, x_3, x_4, x_5, x_6, x_7, x_8, x_9, x_{10}, x_{11}, x_{12}, x_{13}, x_{14}, x_{15}, x_{16})
+&(x_1, x_2, x_3, x_4, x_5, x_6, x_7, x_8, x_9, x_{10}, x_{11}, x_{12}, x_{13}, x_{14}, x_{15}, x_{16})
+&(x_1, x_2, x_3, x_4, x_5, x_6, x_7, x_8, x_9, x_{10}, x_{11}, x_{12}, x_{13}, x_{14}, x_{15}, x_{16})
+&(x_1, x_2, x_3, x_4, x_5, x_6, x_7, x_8, x_9, x_{10}, x_{11}, x_{12}, x_{13}, x_{14}, x_{15}, x_{16})
 \end{align*}
-$$
 
-TODO: How to continue? Seperate in cases for the different roots of $$x_{22} = a^2$$ etc? Also, intuitively, I think we need another equation from a dimensionality perspective?
 
 
 (ii):
