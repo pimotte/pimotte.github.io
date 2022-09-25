@@ -37,7 +37,10 @@ Suppose the zeroes are stable under $$\mathbb{G}_m$$, then the ideal is homogene
 
 (ii): Suppose $$Z = Z_1 \cup Z_2$$ is a reduction of $$Z$$, then $$q^{-1}(Z_1) \cup q^{-1}(Z_2)$$ is a reduction of $$q^{-1}(Z)$$.
 
-TODO: Reverse direction
+Suppose $$q^{-1}(Z) = Z'_1 \cup Z'_2$$ is a reduction of $$q^{-1}(Z)$$. Fix $$x \in Z'_1 \setminus Z'_2$$.
+
+Then we consider $$q': \mathbb{A}^1 \to \mathbb{A}^{n+1}$$ defined by $$c \to cx$$. This is a continuous function. Then $$q'^{-1}(Z'_1) \cup q'^{-1}(Z'_2) = \mathbb{A}^1$$, since $$q^{-1}(Z)$$ stable under scaling. These sets are closed, but they cannot be a reduction, since $$\mathbb{A}^1$$ is irreducible. Hence, $$q'^{-1}(Z'_1) = \mathbb{A}^1$$. Hence $$Z'_1, Z'_2$$ are invariant under scaling and closed in affine space, their images yield a decomposition of $$Z$$.
+
 
 (iii): We start with the inclusion-reversing bijection between $$\{\textrm{closed irreducible subsets of } \mathbb{A}^{n+1}\}$$ and
 $$\{ \textrm{prime ideals of } k[x_0, \ldots, x_n]\}$$. Note that $$\{ O \}$$ corresponds with $$S_{>0}$$, so this yields
@@ -47,6 +50,7 @@ Then the subsets that are stable under $$\mathbb{G}_m$$ can be identified with s
 the bijection $$\{\textrm{closed irreducible subsets of } \mathbb{P}^{n}\}$$ and
 $$\{ \textrm{homogeneous prime ideals } \mathfrak{p} \subset k[x_0, \ldots, x_n] \textrm{ with } \mathfrak{p} \neq S_{>0} \}$$
 
+## Exercise 3.3
 
 
 
